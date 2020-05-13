@@ -23,6 +23,14 @@ $image-path: '/media/protocol/img';
     padding: $spacing-lg $spacing-2xl;
     text-align: center;
 
+    .form-input-label {
+        text-align: left;
+    }
+
+    .legal {
+        @include text-body-xs;
+    }
+
     h3 {
         @include text-title-sm;
         margin-bottom: $spacing-lg;
@@ -525,8 +533,7 @@ main .mzp-l-content {
 
 @media #{$mq-sm} {
     .mzp-c-modal-window {
-        padding-left: $layout-xs;
-        padding-right: $layout-xs;
+        padding: 0 $layout-xs;
     }
 }
 
@@ -534,8 +541,7 @@ main .mzp-l-content {
     .mzp-c-modal-inner {
         max-width: 800px;
         margin: 0 auto;
-        padding-left: $layout-md;
-        padding-right: $layout-md;
+        padding: 0 $layout-md;
 
         .mzp-c-modal-overlay-contents {
             background: #fff;
@@ -551,7 +557,6 @@ main .mzp-l-content {
 
 #send-to-device {
     margin: 0 auto;
-    text-align: center;
 
     footer {
         display: none;
