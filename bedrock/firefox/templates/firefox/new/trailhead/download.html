@@ -12,6 +12,10 @@
 {% block extrahead %}
   {{ super() }}
   {{ css_bundle('firefox_new_download') }}
+
+  {% if switch('firefox-mobile-banner') %}
+    {{ css_bundle('firefox-mobile-banner') }}
+  {% endif %}
 {% endblock %}
 
 {% block content %}
@@ -105,11 +109,22 @@
 {% endif %}
 {% endblock %}
 
+{% block page_banner %}
+  {% if switch('firefox-mobile-banner') %}
+    {% include 'includes/banners/mobile/firefox-android.html' %}
+    {% include 'includes/banners/mobile/firefox-ios.html' %}
+  {% endif %}
+{% endblock %}
+
 {% block js %}
   {{ js_bundle('firefox_new_download') }}
 
   {% if l10n_has_tag('join_firefox_072019') %}
     {{ js_bundle('firefox_new_download_join_modal') }}
+  {% endif %}
+
+  {% if switch('firefox-mobile-banner') %}
+    {{ js_bundle('firefox-mobile-banner') }}
   {% endif %}
 
   {% if switch('stub-attribution-macos') %}

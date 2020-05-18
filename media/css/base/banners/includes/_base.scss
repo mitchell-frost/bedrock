@@ -38,7 +38,6 @@ $image-path: '/media/protocol/img';
 }
 
 .c-banner-title {
-    @include font-mozilla;
     @include text-title-lg;
 
     @media #{$mq-lg} {

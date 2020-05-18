@@ -24,12 +24,14 @@
 
 {% block page_banner %}
   {% if switch('moss-covid-banner', ['en-US', 'en-GB', 'en-CA']) %}
-    {% include 'includes/banners/moss-covid.html' %}
+    {% with class_name = 'mzp-t-mozilla' %}
+      {% include 'includes/banners/moss-covid.html' %}
+    {% endwith %}
   {% endif %}
 {% endblock %}
 
-{% block site_header %}
-  {% include 'includes/protocol/navigation/menu-mozilla/index.html' %}
+{% block content %}
+<main>
   <header class="moss-masthead">
     <div class="header-image">{% block header_image %}{% endblock %}</div>
 
@@ -37,10 +39,6 @@
       <h1 class="page-heading">{% block page_heading %}{% endblock %}</h1>
     </div>
   </header>
-{% endblock %}
-
-{% block content %}
-<main>
   {% block page_content %}{% endblock %}
 </main>
 <div class="mzp-l-content">

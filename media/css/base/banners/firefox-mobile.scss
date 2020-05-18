@@ -1,0 +1,58 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+$font-path: '/media/fonts';
+$image-path: '/media/protocol/img';
+
+@import '../../../protocol/css/includes/lib';
+@import 'includes/base';
+
+.c-banner {
+    background: $color-violet-70 url('/media/img/banners/mobile/background.svg') top center;
+    @include background-size(auto, 100%);
+}
+
+.c-banner-title {
+    @include text-title-md;
+    text-align: center;
+
+    @media #{$mq-lg} {
+        @include bidi(((text-align, left, right),));
+    }
+}
+
+.c-banner-content {
+    position: relative;
+
+    @media #{$mq-lg} {
+        .c-banner-content-inner {
+            @include flexbox;
+            @include align-items(center);
+            @include  justify-content(flex-end);
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    }
+}
+
+.store-button-container {
+    text-align: center;
+    margin-top: $spacing-lg;
+
+    a {
+        display: inline-block;
+
+        img {
+            vertical-align: middle;
+        }
+    }
+
+    @media #{$mq-lg} {
+        @include bidi(((text-align, right, left),));
+        margin-top: 0;
+    }
+}
